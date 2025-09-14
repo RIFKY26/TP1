@@ -2,15 +2,17 @@ from elektronik import Elektronik
 
 def input_int(prompt: str) -> int:
     while True:
+        s = input(prompt).strip()
         try:
-            return int(input(prompt))
+            return int(s)
         except ValueError:
             print("Input harus bilangan bulat. Coba lagi.")
 
 def input_float(prompt: str) -> float:
     while True:
+        s = input(prompt).strip()
         try:
-            return float(input(prompt))
+            return float(s)
         except ValueError:
             print("Input harus angka. Coba lagi.")
 
@@ -21,13 +23,13 @@ def input_str(prompt: str) -> str:
             return s
         print("Tidak boleh kosong. Coba lagi.")
 
-def tambah_data(data: list) -> None:
+def tambah_data(data) -> None:
     print("\n=== Tambah Data ===")
     nama = input_str("Nama Produk: ")
     merk = input_str("Merk: ")
     harga = input_float("Harga: ")
-    stok = input_int("Stok: ")
-    path = input_str("Path Gambar: ")
+    stok  = input_int("Stok: ")
+    path  = input_str("Path Gambar: ")   # <- JANGAN KOSONGKAN BARIS INI
     try:
         e = Elektronik(nama, merk, harga, stok, path)
         data.append(e)
@@ -35,59 +37,69 @@ def tambah_data(data: list) -> None:
     except ValueError as err:
         print(f"Gagal menambah data: {err}")
 
-def tampilkan_data(data: list) -> None:
+def tampilkan_data(data) -> None:
     print("\n=== Daftar Produk ===")
     if not data:
         print("Belum ada data.")
         return
     for e in data:
-        print(e)  # __str__ dari Elektronik sudah rapi
+        print(e)  # __str__ pada Elektronik akan menampilkan format rapi
 
-def cari_data(data: list) -> None:
+def cari_data(data) -> None:
     print("\n=== Cari Data ===")
     idc = input_int("Masukkan ID produk yang ingin dicari: ")
-    for e in data:
+    found = None
+    for e in data:                 # tidak pakai break
         if e.id == idc:
-            print("\n=== Data Ditemukan ===")
-            print(e)
-            return
-    print("Produk dengan ID tersebut tidak ditemukan.")
+            found = e
+    if found:
+        print("\n=== Data Ditemukan ===")
+        print(found)
+    else:
+        print("Produk dengan ID tersebut tidak ditemukan.")
 
-def update_data(data: list) -> None:
+def update_data(data) -> None:
     print("\n=== Update Data ===")
     idc = input_int("Masukkan ID produk yang ingin diupdate: ")
-    for e in data:
+    target = None
+    for e in data:                 # tidak pakai break
         if e.id == idc:
-            nama = input_str("Nama Produk baru: ")
-            merk = input_str("Merk baru: ")
-            harga = input_float("Harga baru: ")
-            stok = input_int("Stok baru: ")
-            path = input_str("Path Gambar baru: ")
-            try:
-                e.nama_produk = nama
-                e.merk = merk
-                e.harga = harga
-                e.stok = stok
-                e.gambar_path = path
-                print("Produk berhasil diupdate!")
-            except ValueError as err:
-                print(f"Gagal mengupdate: {err}")
-            return
-    print("ID tidak ditemukan.")
+            target = e
+    if target:
+        nama = input_str("Nama Produk baru: ")
+        merk = input_str("Merk baru: ")
+        harga = input_float("Harga baru: ")
+        stok  = input_int("Stok baru: ")
+        path  = input_str("Path Gambar baru: ")
+        try:
+            target.nama_produk = nama
+            target.merk = merk
+            target.harga = harga
+            target.stok = stok
+            target.gambar_path = path
+            print("Produk berhasil diupdate!")
+        except ValueError as err:
+            print(f"Gagal mengupdate: {err}")
+    else:
+        print("ID tidak ditemukan.")
 
-def hapus_data(data: list) -> None:
+def hapus_data(data) -> None:
     print("\n=== Hapus Data ===")
     idc = input_int("Masukkan ID produk yang ingin dihapus: ")
-    for i, e in enumerate(data):
+    idx = -1
+    for i, e in enumerate(data):   # tidak pakai break
         if e.id == idc:
-            data.pop(i)
-            print("Produk berhasil dihapus!")
-            return
-    print("ID tidak ditemukan.")
+            idx = i
+    if idx != -1:
+        data.pop(idx)
+        print("Produk berhasil dihapus!")
+    else:
+        print("ID tidak ditemukan.")
 
 def main():
-    data: list[Elektronik] = []
-    while True:
+    data = []
+    pilihan = ""                   # loop berhenti natural saat "0"
+    while pilihan != "0":
         print("\n=== Menu Toko Elektronik ===")
         print("1. Tambah Data")
         print("2. Tampilkan Data")
@@ -109,7 +121,6 @@ def main():
             cari_data(data)
         elif pilihan == "0":
             print("Keluar program...")
-            break
         else:
             print("Pilihan tidak valid.")
 
