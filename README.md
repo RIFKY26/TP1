@@ -42,26 +42,4 @@ Contoh Alur Interaksi Pengguna
 3.	Program kemudian mengelola data tersebut dan memberikan respons, seperti menampilkan data yang baru ditambahkan atau melakukan pembaruan data produk.
 
 Kesimpulan
-Program ini dirancang untuk memberikan pengalaman manajemen data produk yang sederhana namun efektif di dalam toko elektronik. Dengan menggunakan OOP, program ini dapat mengelola data dengan cara yang terstruktur dan mudah dipelihara. Kode ini tidak menggunakan database, melainkan menggunakan penyimpanan sementara dalam bentuk array/list objek. Setiap operasi CRUD dilakukan dengan menggunakan metode kelas yang dirancang khusus untuk memenuhi kebutuhan praktikum.
-
-(Tambah data) 
-
-<img width="384" height="736" alt="Screenshot 2025-09-14 141128" src="https://github.com/user-attachments/assets/e564b400-c09e-477c-a3f4-368f36202b8a" />
-
-(Menampilkan data)
-
-<img width="384" height="379" alt="Screenshot 2025-09-14 141324" src="https://github.com/user-attachments/assets/e09e3e83-2f9d-4998-a21d-817be06ed45a" />
-
-(Update data)
-
-<img width="418" height="886" alt="Screenshot 2025-09-14 141422" src="https://github.com/user-attachments/assets/fe500c6a-845c-4338-bbac-24e02721ae62" />
-
-(Hapus data)
-
-<img width="481" height="638" alt="Screenshot 2025-09-14 143352" src="https://github.com/user-attachments/assets/1a24f7b2-223b-43f3-9086-5469f2360a44" />
-
-(Cari data)
-
-<img width="409" height="923" alt="Screenshot 2025-09-14 150024" src="https://github.com/user-attachments/assets/d8c02537-3ed7-4654-84c7-fe0703a40371" />
-
-Toko Elektronik (PHP, SESSION, 1 Class) and 4 more pages - Personal - Microsoft​ Edge 2025-09-14 22-50-39.mp4
+Program ini dirancang untuk memberikan pengalaman manajemen data produk yang sederhana namun efektif di dalam toko elektronik. Dengan menggunakan OOP, program ini dapat mengelola data dengan cara yang terstruktur dan mudah dipelihara. Kode ini tidak menggunakan database, melainkan menggunakan penyimpanan sementara dalam bentuk array/list objek.
