@@ -7,6 +7,7 @@ Penjelasan Desain Program
 Program ini dirancang untuk mengelola data barang di sebuah toko elektronik menggunakan konsep Object-Oriented Programming (OOP). Desain program ini berfokus pada penggunaan satu kelas utama untuk mengelola data barang elektronik, yang terdiri dari beberapa atribut dan metode untuk mengelola data produk.
 
 Desain Kelas: Elektronik
+
 Atribut Kelas:
 1.	ID (int): Sebagai identifikasi unik untuk setiap objek elektronik.
 2.	Nama Produk (String): Nama dari produk elektronik yang dijual di toko.
