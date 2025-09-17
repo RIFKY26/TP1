@@ -4,7 +4,7 @@ tidak akan melakukan kecurangan seperti yang telah di spesifikasikan Aamiin.
 
 
 Penjelasan Desain Program
-Program ini dirancang untuk mengelola data barang di sebuah toko elektronik menggunakan konsep Object-Oriented Programming (OOP). Program ini dibuat dalam bahasa Java dan memiliki antarmuka berbasis terminal (CLI). Desain program ini berfokus pada penggunaan satu kelas utama untuk mengelola data barang elektronik, yang terdiri dari beberapa atribut dan metode untuk mengelola data produk.
+Program ini dirancang untuk mengelola data barang di sebuah toko elektronik menggunakan konsep Object-Oriented Programming (OOP). Desain program ini berfokus pada penggunaan satu kelas utama untuk mengelola data barang elektronik, yang terdiri dari beberapa atribut dan metode untuk mengelola data produk.
 
 Desain Kelas: Elektronik
 Atribut Kelas:
